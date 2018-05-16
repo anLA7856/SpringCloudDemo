@@ -3,7 +3,7 @@ spring:
     name: config
   profiles:
     active: native
-
+    
 eureka:
   instance:
     non-secure-port: ${server.port:8888}
@@ -11,4 +11,5 @@ eureka:
       instanceId: ${spring.application.name}:${random.value}
   client:
     service-url:
-      defaultZone: http://${eureka.host.localhost}:${eureka.port:8761}/eureka/
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/ #5
+
